@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
     const newCount = parseInt(count) + 1;
 
-    writeFileSync('./count.txt', newCount);
+    writeFileSync('./count.txt', newCount.toString());
 
     res.send(`
             <!DOCTYPE html>
