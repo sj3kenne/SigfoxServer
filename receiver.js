@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 // const Promise = require('bluebird')
 // const AppDAO = require('./dao')
 // const MessageRepository = require('./tools/message_repository')
-var db = require("./database.js")
+var db = require("./tools/database.js")
 
 // //create table if not exists
 // const dao = new AppDAO('./database.sqlite3')
