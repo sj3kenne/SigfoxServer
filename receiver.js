@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 // const AppDAO = require('./dao')
 // const MessageRepository = require('./tools/message_repository')
 var db = require("./tools/database.js")
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // //create table if not exists
 // const dao = new AppDAO('./database.sqlite3')
@@ -45,6 +47,14 @@ app.post('/receiver', function(req, res) {
 
     console.log('Data field decoded...');
     //console.log(hex2a(body.data));
+
+
+    var errors = []
+    if (errors.length) {
+        res.status(400).json({ "error": errors.join(",") });
+        return;
+    }
+    console.log(body.deviceId);
 
     var sql = 'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?,?)'
     var params = [body.deviceId, body.seqNumber, body.data, body.time, body.deviceTypeId]
