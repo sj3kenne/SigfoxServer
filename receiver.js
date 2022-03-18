@@ -6,8 +6,7 @@ const bodyParser = require("body-parser");
 // const AppDAO = require('./dao')
 // const MessageRepository = require('./tools/message_repository')
 var db = require("./tools/database.js")
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
 
 // //create table if not exists
 // const dao = new AppDAO('./database.sqlite3')
