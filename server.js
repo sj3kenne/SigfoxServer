@@ -4,12 +4,12 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    const count = readFileSync('./count.txt', 'utf-8');
+    const count = readFileSync('/home/pi/Documents/sigfoxServer/count.txt', 'utf-8');
     console.log('count ', count);
 
     const newCount = parseInt(count) + 1;
 
-    writeFileSync('./count.txt', newCount.toString());
+    writeFileSync('/home/pi/Documents/sigfoxServer/count.txt', newCount.toString());
 
     res.send(`
             <!DOCTYPE html>
