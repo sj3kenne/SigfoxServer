@@ -50,12 +50,13 @@ app.post('/receiver', function(req, res) {
     var params = [body.deviceId, body.seqNumber, body.data, body.time, body.deviceTypeId]
     db.run(sql, params, function(err, result) {
         if (err) {
+            console.log(err);
             //res.status(400).json({ "error": err.message })
             return;
         }
         res.json({
             "message": "success",
-            "data": data,
+            "data": data
         })
     })
 
