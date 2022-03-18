@@ -44,9 +44,9 @@ app.post('/receiver', function(req, res) {
     console.log(body);
 
     console.log('Data field decoded...');
-    console.log(hex2a(body.data));
+    //console.log(hex2a(body.data));
 
-    var sql = 'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?)'
+    var sql = 'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?,?)'
     var params = [body.deviceId, body.seqNumber, body.data, body.time, body.deviceTypeId]
     db.run(sql, params, function(err, result) {
         if (err) {
