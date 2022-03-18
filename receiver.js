@@ -50,7 +50,7 @@ app.post('/receiver', function(req, res) {
     var params = [body.deviceId, body.seqNumber, body.data, body.time, body.deviceTypeId]
     db.run(sql, params, function(err, result) {
         if (err) {
-            res.status(400).json({ "error": err.message })
+            //res.status(400).json({ "error": err.message })
             return;
         }
         res.json({
@@ -64,6 +64,15 @@ app.post('/receiver', function(req, res) {
 
     res.send('OK')
 })
+
+// Express route to handle errors
+app.use(function(err, req, res, next) {
+    if (req.xhr) {
+        res.status(500).send('Oops, Something went wrong!');
+    } else {
+        next(err);
+    }
+});
 
 var server = http.createServer(app).listen(1880, function() {
     console.log('My Sigfox backend...');
