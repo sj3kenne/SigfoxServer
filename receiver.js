@@ -57,7 +57,7 @@ app.post('/receiver', function(req, res) {
 
     var sql = 'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?,?)'
     var params = [body.deviceId, body.seqNumber, body.data, body.time, body.deviceTypeId]
-    db.run(sql, params, function(err, result) {
+    db.run(sql, params, function(err, res) {
         if (err) {
             console.log(err);
             //res.status(400).json({ "error": err.message })
