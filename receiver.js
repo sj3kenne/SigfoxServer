@@ -53,7 +53,7 @@ app.post('/receiver', function(req, res) {
         res.status(400).json({ "error": errors.join(",") });
         return;
     }
-    console.log(body.deviceId);
+    //console.log(body.deviceId);
 
     var sql = 'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?,?)'
     var params = [body.deviceId, body.seqNumber, body.data, body.time, body.deviceTypeId]
@@ -65,7 +65,7 @@ app.post('/receiver', function(req, res) {
         }
         res.json({
             "message": "success",
-            "data": data
+            "data": body.data
         })
     })
 
