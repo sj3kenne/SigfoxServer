@@ -4,7 +4,7 @@ var express = require('express');
 const bodyParser = require("body-parser");
 
 //const Promise = require('bluebird')
-const AppDAO = require('./dao')
+const AppDAO = require('./tools/dao')
 const MessageRepository = require('./tools/message_repository')
 
 //var db = require("./tools/database.js")
