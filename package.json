@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/sj3kenne/sigfoxServer#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "express": "^4.17.3",
     "md5": "^2.3.0",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^4.2.0"
   }
 }
