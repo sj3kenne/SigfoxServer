@@ -48,12 +48,12 @@ app.post('/receiver', function(req, res) {
     //console.log(hex2a(body.data));
 
 
-    var errors = []
-    if (errors.length) {
-        res.status(400).json({ "error": errors.join(",") });
-        return;
-    }
-    //console.log(body.deviceId);
+    // var errors = []
+    // if (errors.length) {
+    //     res.status(400).json({ "error": errors.join(",") });
+    //     return;
+    // }
+    // //console.log(body.deviceId);
 
     var sql = 'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?,?)'
     var params = [body.deviceId, body.seqNumber, body.data, body.time, body.deviceTypeId]
