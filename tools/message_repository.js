@@ -11,7 +11,7 @@ class MessageRepository {
           msg_seq_number INTEGER,
           data TEXT,
           time INTEGER,
-          device_type_id TEXT,
+          device_type_id TEXT)
           `
         return this.dao.run(sql)
     }
