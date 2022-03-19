@@ -18,7 +18,7 @@ class MessageRepository {
 
     create(device_id, msg_seq_number, data, time, device_type_id) {
         return this.dao.run(
-            'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?)', [device_id, msg_seq_number, data, time, device_type_id])
+            'INSERT INTO messages (device_id, msg_seq_number, data, time, device_type_id) VALUES (?,?,?,?, ?)', [device_id, msg_seq_number, data, time, device_type_id])
     }
 
     // getById(device_id) {
